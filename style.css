@@ -99,6 +99,7 @@ body {
 .t-wh  { color: var(--paper); }
 .t-gr  { color: var(--phosphor); }
 .t-ch  { color: var(--chrome); }
+.t-t1  { color: var(--t1); }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px;
@@ -195,6 +196,22 @@ a:focus-visible { outline: 2px solid var(--t1); outline-offset: 3px; border-radi
   letter-spacing: 0.14em;
   white-space:    nowrap;
 }
+
+.mh-cli-link {
+  display:         inline-block;
+  font-family:     var(--ibm-plex);
+  font-size:       max(11px, 0.36em);
+  color:           var(--dim);
+  text-decoration: none;
+  letter-spacing:  0.14em;
+  text-transform:  uppercase;
+  border:          1px solid var(--rule);
+  padding:         2px 6px;
+  border-radius:   2px;
+  margin-top:      0.3em;
+}
+.mh-cli-link:hover        { color: var(--phosphor); border-color: var(--phosphor); }
+.mh-cli-link:focus-visible { outline: 2px solid var(--t1); outline-offset: 3px; border-radius: 2px; }
 
 @media (max-width: 599px) {
   /* height, padding, and font-size all derived from --wm clamp — no overrides needed */

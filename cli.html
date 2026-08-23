@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>terminal — network-engineers.com</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B0F0E">
+  <link rel="icon" href="./assets/brand/ne-bubble-favicon-512.png">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .cli-body {
+      display:        flex;
+      flex-direction: column;
+      height:         100dvh;
+      overflow:       hidden;
+      font-size:      16px;
+    }
+
+    /* ── Header bar ── */
+    .cli-header { background: var(--panel); border-bottom: 1px solid var(--rule); flex-shrink: 0; }
+
+    .cli-header-inner {
+      display:         flex;
+      align-items:     center;
+      justify-content: space-between;
+      height:          48px;
+      padding-inline:  1.5rem;
+    }
+
+    .cli-home-link {
+      font-family:     var(--ibm-plex);
+      font-size:       13px;
+      color:           var(--chrome);
+      text-decoration: none;
+      letter-spacing:  0.1em;
+      text-transform:  uppercase;
+      border:          1px solid var(--rule);
+      padding:         3px 10px;
+      border-radius:   2px;
+    }
+    .cli-home-link:hover        { color: var(--paper); border-color: var(--chrome); }
+    .cli-home-link:focus-visible { outline: 2px solid var(--t1); outline-offset: 3px; }
+
+    /* ── Terminal area ── */
+    .cli-main {
+      flex:           1;
+      overflow-y:     auto;
+      padding:        1.5rem;
+      display:        flex;
+      flex-direction: column;
+      min-height:     0;
+      cursor:         text;
+    }
+
+    #cli-output { flex: 1; }
+
+    .cli-line {
+      display:     block;
+      white-space: pre-wrap;
+      word-break:  break-word;
+      line-height: 1.75;
+    }
+
+    /* ── Input row ── */
+    .cli-input-row {
+      display:     flex;
+      align-items: center;
+      margin-top:  0.1rem;
+    }
+
+    .cli-prompt-label {
+      color:       var(--dim);
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1.75;
+      user-select: none;
+    }
+
+    .cli-input {
+      background:         transparent;
+      border:             none;
+      outline:            none;
+      color:              var(--paper);
+      font-family:        var(--jetbrains);
+      font-size:          16px;
+      line-height:        1.75;
+      flex:               1;
+      padding:            0 0 0 0.5ch;
+      margin:             0;
+      caret-color:        var(--t1);
+      -webkit-appearance: none;
+      min-width:          0;
+    }
+    .cli-input:disabled { opacity: 0.4; }
+
+    /* ── Mobile note ── */
+    .cli-mobile-note { display: none; }
+    @media (max-width: 599px) { .cli-mobile-note { display: block; } }
+  </style>
+</head>
+
+<body class="cli-body">
+
+  <header class="cli-header">
+    <div class="cli-header-inner">
+      <span class="lockup-h footer-lockup">
+        <img src="./assets/brand/ne-bubble-dark-crop.svg"
+             class="lockup-mark" alt="" aria-hidden="true" focusable="false">
+        <span><span class="wm-name">network-engineers</span><span class="wm-tld">.com</span></span>
+      </span>
+      <a href="./" class="cli-home-link" aria-label="Return to main site">[home]</a>
+    </div>
+  </header>
+
+  <main class="cli-main" id="cli-main" aria-label="Interactive terminal">
+    <div id="cli-output" role="log" aria-live="polite" aria-label="Terminal output"></div>
+    <div class="cli-input-row" id="cli-input-row">
+      <span class="cli-prompt-label" id="cli-prompt-text" aria-hidden="true">ne#</span>
+      <input type="text" id="cli-input"
+             class="cli-input"
+             autocomplete="off"
+             autocorrect="off"
+             autocapitalize="none"
+             spellcheck="false"
+             aria-label="Terminal command input">
+    </div>
+  </main>
+
+  <script src="./cli.js"></script>
+
+</body>
+</html>
