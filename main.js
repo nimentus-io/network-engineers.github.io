@@ -197,32 +197,29 @@ const RSS_URL      = '/feed.xml'
   }
 
   async function runLoop() {
-    while (true) {
-      linesEl.innerHTML   = ''
-      curEl.textContent   = ''
-      curEl.className     = 't-wh'
-      curEl.style.display = ''
+    curEl.textContent   = ''
+    curEl.className     = 't-wh'
+    curEl.style.display = ''
 
-      for (var i = 0; i < LINES.length; i++) {
-        var line = LINES[i]
-        if (line.instant) {
-          await sleep(55)
-          linesEl.appendChild(makeLine(line.text, line.cls))
-        } else {
-          curEl.className = 't-' + line.cls
-          for (var j = 0; j < line.text.length; j++) {
-            curEl.textContent += line.text[j]
-            await sleep(rand(28, 68))
-          }
-          await sleep(rand(100, 200))
-          linesEl.appendChild(makeLine(line.text, line.cls))
-          curEl.textContent = ''
+    for (var i = 0; i < LINES.length; i++) {
+      var line = LINES[i]
+      if (line.instant) {
+        await sleep(55)
+        linesEl.appendChild(makeLine(line.text, line.cls))
+      } else {
+        curEl.className = 't-' + line.cls
+        for (var j = 0; j < line.text.length; j++) {
+          curEl.textContent += line.text[j]
+          await sleep(rand(28, 68))
         }
-        await sleep(line.pauseAfter !== undefined ? line.pauseAfter : rand(70, 200))
+        await sleep(rand(100, 200))
+        linesEl.appendChild(makeLine(line.text, line.cls))
+        curEl.textContent = ''
       }
-
-      await sleep(6000)
+      await sleep(line.pauseAfter !== undefined ? line.pauseAfter : rand(70, 200))
     }
+
+    curEl.style.display = 'none'
   }
 
   if (reduced) { renderStatic() } else { runLoop() }
