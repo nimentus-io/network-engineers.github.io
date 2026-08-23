@@ -5,7 +5,7 @@
 /* ── Edit these to update the status displays, peering button, and footer ── */
 const CONCLUSIONS_COUNT = 0
 const NEXT_SESSION      = 'TBA'
-const LINKEDIN_URL = 'https://linkedin.com/company/REPLACE-ME'
+const LINKEDIN_URL = 'https://www.linkedin.com/company/network-engineers-com'
 const GITHUB_URL   = 'https://github.com/nimentus'
 const RSS_URL      = '/feed.xml'
 
