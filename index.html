@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>network-engineers.com — one topic, 30 minutes, written conclusion</title>
+  <meta name="description" content="One topic. Thirty minutes. One conclusion. A vendor-neutral community for network engineers.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0B0F0E">
+  <link rel="canonical" href="https://network-engineers.com/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://network-engineers.com/">
+  <meta property="og:title"       content="network-engineers.com">
+  <meta property="og:description" content="One topic. Thirty minutes. One conclusion. A vendor-neutral community for network engineers.">
+  <meta property="og:image"       content="./assets/brand/ne-social-1200x630.png">
+
+  <link rel="icon" href="./assets/brand/ne-bubble-favicon-512.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── MASTHEAD — full-bleed background, scrolls away ───────────────────── -->
+  <header id="masthead">
+    <!--
+      Stacked lockup: mark above wordmark, tail pointing at the period.
+      Mark is horizontally centred on the "." in ".com":
+        "network-engineers" = 17 chars → period centre = 17.5ch.
+        Mark half-width ≈ 0.74em → margin-left: calc(17.5ch - 0.74em).
+    -->
+    <div class="masthead-inner">
+      <a href="./" class="lockup-v" aria-label="network-engineers.com — home">
+        <img src="./assets/brand/ne-bubble-dark-crop.svg"
+             class="lockup-mark-v" alt="" aria-hidden="true" focusable="false">
+        <span class="wm-line" aria-hidden="true">
+          <span class="wm-name">network-engineers</span><span class="wm-tld">.com</span>
+        </span>
+      </a>
+
+      <div class="masthead-right" aria-hidden="true">
+        <p class="mh-tagline">one topic · 30 min · written conclusion</p>
+        <p class="mh-status" id="mh-status">conclusions: 0 | next: tba</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MINI-BAR — full-bleed fixed, appears when masthead leaves viewport ── -->
+  <div id="mini-bar" aria-hidden="true">
+    <div class="page-inner mini-bar-inner">
+      <span class="lockup-h mini-lockup">
+        <img src="./assets/brand/ne-bubble-dark-crop.svg"
+             class="lockup-mark" alt="" aria-hidden="true" focusable="false">
+        <span><span class="wm-name">network-engineers</span><span class="wm-tld">.com</span></span>
+      </span>
+      <span class="mini-bar-status" id="mini-bar-status">conclusions: 0 | next: tba</span>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <div class="page-inner">
+      <h1 class="sr-only">network-engineers.com — a vendor-neutral community for network engineers</h1>
+
+      <!-- ── 1. HERO ──────────────────────────────────────────────────────── -->
+      <!--
+        Bare terminal on --ink. No pane border or background.
+        min-height reserves exactly 11 lines × line-height 1.75 at 20px
+        plus top/bottom padding so there is zero layout shift as lines appear.
+      -->
+      <section id="home" class="hero-block" aria-labelledby="h-home">
+        <h2 id="h-home" class="sr-only">Live session</h2>
+
+        <div id="hero"
+             role="img"
+             aria-label="terminal session bringing interface Brain0/0 up, ending with a published conclusion"
+             aria-live="off">
+
+          <noscript>
+            <div class="t-dim">ne# configure terminal</div>
+            <div class="t-wh">ne(config)# interface Brain0/0</div>
+            <div class="t-wh">ne(config-if)# no shutdown</div>
+            <div class="t-gr">%LINK-3-UPDOWN: Brain0/0, changed state to up</div>
+            <div class="t-wh">ne(config-if)# ip address topic/32</div>
+            <div class="t-wh">ne(config-if)# exec-timeout 30 0</div>
+            <div class="t-dim">! -- 30 minutes of discussion --</div>
+            <div class="t-wh">ne(config-if)# shutdown</div>
+            <div class="t-wh">ne# write memory</div>
+            <div class="t-dim">Building configuration... [OK]</div>
+            <div class="t-gr">%Conclusion published. See you in two weeks.</div>
+          </noscript>
+
+          <div id="t-anim" aria-hidden="true" style="display:none">
+            <div id="t-lines"></div>
+            <div id="t-cur-line">
+              <span id="t-cur"></span><span class="cursor" aria-hidden="true"></span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── 2. INTRO ─────────────────────────────────────────────────────── -->
+      <!--
+        Plain English — no terminal chrome. Answers "what is this" before
+        asking the visitor to do anything.
+      -->
+      <div class="intro-block">
+        <p class="intro-headline">A vendor-neutral community for network engineers.</p>
+        <p class="intro-desc">Every two weeks: one voted topic, one practitioner, thirty minutes — and a written conclusion published here.</p>
+      </div>
+
+      <!-- ── 3. THE ASK — the single conversion on this page ──────────────── -->
+      <section id="join" class="ask-block" aria-labelledby="h-join">
+        <h2 id="h-join" class="ask-heading">Join the founding circle</h2>
+        <p class="ask-desc">The founding circle is open to practitioners who want to shape the
+format, topics and community norms from the first session.</p>
+        <p class="ask-desc">If that sounds like you, reach out — we peer with humans, not
+algorithms.</p>
+        <form id="peer-form"
+              action="https://formspree.io/f/mzepqpdb"
+              method="POST"
+              novalidate>
+
+          <div class="peer-field">
+            <label for="peer-name" class="peer-label">
+              <span class="t-dim">ne(peer)#</span> set neighbor.name
+            </label>
+            <input type="text" id="peer-name" name="name"
+                   class="peer-input"
+                   autocomplete="name"
+                   required
+                   spellcheck="false">
+          </div>
+
+          <div class="peer-field">
+            <label for="peer-email" class="peer-label">
+              <span class="t-dim">ne(peer)#</span> set neighbor.email
+            </label>
+            <input type="email" id="peer-email" name="email"
+                   class="peer-input"
+                   autocomplete="email"
+                   required
+                   spellcheck="false">
+          </div>
+
+          <button type="submit" class="btn-peer" id="peer-btn">peer now</button>
+
+          <span class="ask-status" id="peer-status" aria-live="polite">
+            %BGP-5-ADJCHANGE: neighbor pending, state Active
+          </span>
+        </form>
+
+        <div id="peer-success" hidden aria-live="polite" class="peer-success">
+          <span class="t-gr">%BGP-5-ADJCHANGE: neighbor established, state Connected</span><br>
+          <span class="t-dim">%BGP-6-NOTIFICATION: we'll be in touch before the first session</span>
+        </div>
+      </section>
+
+      <!-- ── 4. ABOUT — reference material, secondary weight ──────────────── -->
+      <section id="about" class="about-block" aria-labelledby="h-about">
+        <h2 id="h-about" class="section-cmd" aria-label="About this community">
+          <span class="t-dim" aria-hidden="true">ne#</span> about
+        </h2>
+        <pre class="config-out">
+<span class="t-wh">community network-engineers.com</span>
+<span class="t-wh"> description vendor-neutral, bi-weekly</span>
+<span class="t-wh"> session-length 30</span>
+<span class="t-wh"> topic-selection community-vote</span>
+<span class="t-wh"> guest-policy practitioner-only</span>
+<span class="t-gr"> output written conclusion, published here</span>
+<span class="t-gr"> sponsors none</span>
+<span class="t-gr"> fees none</span>
+<span class="t-wh"> exec-timeout hard-stop</span></pre>
+      </section>
+
+      <!-- phase 2 — conclusions list goes here once episodes have shipped -->
+
+    </div><!-- /page-inner -->
+  </main>
+
+  <!-- ── FOOTER — minimal, full-bleed ────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="page-inner footer-inner">
+      <span class="lockup-h footer-lockup" aria-hidden="true">
+        <img src="./assets/brand/ne-bubble-dark-crop.svg"
+             class="lockup-mark" alt="" aria-hidden="true" focusable="false">
+        <span><span class="wm-name">network-engineers</span><span class="wm-tld">.com</span></span>
+      </span>
+      <nav class="footer-links" aria-label="External links">
+        <a href="https://linkedin.com/company/REPLACE-ME" id="ft-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/nimentus" id="ft-github" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <a href="/feed.xml" id="ft-rss">RSS</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ── BOTTOM NAV — mobile only (hidden at ≥900px via CSS) ─────────────── -->
+  <nav id="bottom-bar" aria-label="Page sections">
+    <a href="#home" aria-label="home">
+      <span class="key-label" aria-hidden="true">[1]</span>
+      <span aria-hidden="true">home</span>
+    </a>
+    <a href="#join" class="nav-join" aria-label="join">
+      <span class="key-label" aria-hidden="true">[2]</span>
+      <span aria-hidden="true">join</span>
+    </a>
+    <a href="#about" aria-label="about">
+      <span class="key-label" aria-hidden="true">[3]</span>
+      <span aria-hidden="true">about</span>
+    </a>
+  </nav>
+
+  <script src="./main.js"></script>
+
+</body>
+</html>
